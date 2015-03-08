@@ -1,0 +1,14 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+    dependencies {
+        classpath 'org.almibe:naps:0.0.1-SNAPSHOT'
+    }
+}
+
+apply plugin: 'naps'
+
+naps {
+}
