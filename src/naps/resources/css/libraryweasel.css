@@ -3,6 +3,15 @@
   padding-bottom:30px;
 }
 
+.title {
+  padding-left:25px;
+  height:300px;
+  display:flex;
+  align-items:flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .pubDate {
   float:right;
 }
