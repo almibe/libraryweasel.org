@@ -1,8 +1,9 @@
-/* Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA */
-/* zurb.com */
+/* Library Weasel - A tool for exploring, manipulating, and creating open data. */
+/* libraryweasel.org */
 /* humanstxt.org */
 
 /* SITE */
+  Content Author: Alex Berry - alexmiberry@gmail.com
   Standards: HTML5, CSS3
-  Components: jQuery, Orbit, Reveal
-  Software: Sublime, Git, Sass
+  Components: Foundation, featherlight, jQuery
+  Software: naps, Git
