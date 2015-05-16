@@ -1,24 +1,4 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        mavenLocal()
-    }
-    dependencies {
-        classpath 'org.almibe:naps:0.0.1-SNAPSHOT'
-    }
-}
-
-apply plugin: 'org.almibe.naps'
-
-naps {
-    defaultTemplate = 'index.html'
-    contentGroups {
-        mainPage {
-            mainContent = md 'index.md'
-            mainContent.dataModel['blogs'] = htmlDir 'blog/'
-        }
-    }
-}
+apply plugin: SiteBuilderPlugin
 
 task clean() << {
     project.file('build/').deleteDir()
