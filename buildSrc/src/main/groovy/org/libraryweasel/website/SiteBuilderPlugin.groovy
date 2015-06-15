@@ -8,6 +8,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.Copy
 import org.libraryweasel.website.helpers.FileExtensionMapper
+import org.libraryweasel.website.helpers.TemplateProcessor
 import org.pegdown.PegDownProcessor
 
 class SiteBuilderPlugin implements Plugin<Project> {
@@ -17,6 +18,7 @@ class SiteBuilderPlugin implements Plugin<Project> {
         JsonSlurper jsonSlurper = new JsonSlurper()
         FileExtensionMapper fileExtensionMapper = new FileExtensionMapper()
         PegDownProcessor markDownProcessor = new PegDownProcessor()
+        TemplateProcessor templateProcessor = new TemplateProcessor(project.file("src/site/templates"));
 
         project.task('processResources', type:Copy) {
             from("$project.projectDir/src/site/resources")
@@ -24,7 +26,6 @@ class SiteBuilderPlugin implements Plugin<Project> {
         }
 
         project.task('buildSite', dependsOn:[':processResources']) << {
-            //TODO process md blog posts
             File dir = new File(project.projectDir, "src/site/contents/blog")
             def blogs = []
             dir.eachFile(FileType.FILES) { file ->
@@ -39,9 +40,7 @@ class SiteBuilderPlugin implements Plugin<Project> {
                     }
                 }
             }
-            //TODO fill into index
-            //TODO write index
-            //process index template and write index
+            templateProcessor.processTemplate('index.html', ['blogs':blogs], new File(project.buildDir, 'website/index.html'))
         }
     }
 }

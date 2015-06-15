@@ -23,13 +23,13 @@
   <#list blogs as blog>
   <div class="row">
     <div class="large-12 columns">
-      <h3 class="newsTitle">${blog.dataModel.blogTitle}</h3>
-      <span class="pubDate">${blog.dataModel.pubDate}</span>
+      <h3 class="newsTitle">${blog.title}</h3>
+      <span class="pubDate">${blog.date}</span>
     </div>
   </div>
   
   <div class="row">
-    ${blog.dataModel.mainContent}
+    ${blog.content}
   </div>
   </#list>
   <script src="js/vendor/jquery.js"></script>
