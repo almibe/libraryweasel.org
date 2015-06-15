@@ -1,3 +1,5 @@
+package org.libraryweasel.website
+
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.Copy

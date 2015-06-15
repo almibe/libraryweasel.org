@@ -1,4 +1,4 @@
-apply plugin: SiteBuilderPlugin
+apply plugin: org.libraryweasel.website.SiteBuilderPlugin
 
 task clean() << {
     project.file('build/').deleteDir()
