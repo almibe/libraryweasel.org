@@ -1,4 +1,4 @@
-/* Library Weasel - A tool for exploring, manipulating, and creating open data. */
+/* Library Weasel - A breadboard for open data. */
 /* libraryweasel.org */
 /* humanstxt.org */
 
