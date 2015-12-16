@@ -4,6 +4,9 @@ repositories {
     mavenCentral()
 }
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.5'
     compile 'org.freemarker:freemarker:2.3.21'

@@ -1,5 +1,4 @@
 package org.libraryweasel.websitegen
-
 import com.google.common.io.Files
 import groovy.io.FileType
 import groovy.json.JsonSlurper
@@ -7,8 +6,6 @@ import groovy.transform.Immutable
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.Copy
-import org.libraryweasel.website.helpers.FileExtensionMapper
-import org.libraryweasel.website.helpers.TemplateProcessor
 import org.pegdown.PegDownProcessor
 
 class SiteBuilderPlugin implements Plugin<Project> {
