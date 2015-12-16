@@ -9,6 +9,7 @@ dependencies {
     compile 'org.freemarker:freemarker:2.3.21'
     compile 'org.pegdown:pegdown:1.4.2'
     compile 'com.google.guava:guava:18.0'
+    compile gradleApi()
 
     testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
 }
