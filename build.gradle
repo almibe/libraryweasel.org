@@ -1,5 +1,14 @@
-apply plugin: org.libraryweasel.website.SiteBuilderPlugin
+apply plugin: 'groovy'
 
-task clean() << {
-    project.file('build/').deleteDir()
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.0.5'
+}
+
+task runScript (dependsOn: 'classes', type: JavaExec) {
+    main = 'BuildWebsite'
+    classpath = sourceSets.main.runtimeClasspath
 }
