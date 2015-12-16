@@ -1,4 +1,4 @@
-package org.libraryweasel.website.helpers
+package org.libraryweasel.websitegen
 
 class FileExtensionMapper {
     File switchFileExtension(File f, String newExtension) {

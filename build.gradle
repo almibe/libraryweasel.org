@@ -6,6 +6,11 @@ repositories {
 
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.5'
+    compile 'org.freemarker:freemarker:2.3.21'
+    compile 'org.pegdown:pegdown:1.4.2'
+    compile 'com.google.guava:guava:18.0'
+
+    testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
 }
 
 task runScript (dependsOn: 'classes', type: JavaExec) {

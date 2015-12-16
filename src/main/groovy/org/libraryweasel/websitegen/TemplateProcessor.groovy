@@ -1,4 +1,4 @@
-package org.libraryweasel.website.helpers
+package org.libraryweasel.websitegen
 
 import freemarker.template.*
 

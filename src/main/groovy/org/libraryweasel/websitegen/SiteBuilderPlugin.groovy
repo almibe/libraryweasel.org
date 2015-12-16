@@ -1,4 +1,4 @@
-package org.libraryweasel.website
+package org.libraryweasel.websitegen
 
 import com.google.common.io.Files
 import groovy.io.FileType
