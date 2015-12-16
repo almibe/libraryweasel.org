@@ -1,23 +1,92 @@
+import freemarker.template.DefaultObjectWrapper
+import freemarker.template.Template
+import freemarker.template.TemplateExceptionHandler
+import freemarker.template.Version
+
 apply plugin: 'groovy'
 
-repositories {
-    mavenCentral()
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.freemarker:freemarker:2.3.21'
+        classpath 'org.pegdown:pegdown:1.4.2'
+        classpath 'com.google.guava:guava:18.0'
+    }
 }
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
 
 dependencies {
-    compile 'org.freemarker:freemarker:2.3.21'
-    compile 'org.pegdown:pegdown:1.4.2'
-    compile 'com.google.guava:guava:18.0'
-    compile gradleApi()
-    compile localGroovy()
-
-    testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
 }
 
-task buildSite (dependsOn: 'classes', type: JavaExec) {
-    main = 'org.libraryweasel.websitegen.BuildWebsite'
-    classpath = sourceSets.main.runtimeClasspath
+task buildSite() {
+    println "test"
+}
+
+class FileExtensionMapper {
+    File switchFileExtension(File f, String newExtension) {
+        File parent = f.parentFile
+        String name = f.name
+        int index = name.lastIndexOf('.')
+        if(parent != null) {
+            return index == -1 ? new File(parent, name + '.' + newExtension) : new File(parent, name.substring(0, index) + '.' + newExtension)
+        } else {
+            return index == -1 ? new File(name + '.' + newExtension) : new File(name.substring(0, index) + '.' + newExtension)
+        }
+    }
+
+    String switchFileExtension(String s, String newExtension) {
+        return switchFileExtension(new File(s), newExtension).path
+    }
+
+    String getExtension(File file) {
+        String name = file.name
+        int index = name.lastIndexOf('.')
+        return index == -1 ? '' : name.substring(index+1)
+    }
+
+    String getExtension(String file) {
+        return getExtension(new File(file))
+    }
+}
+
+class TemplateProcessor {
+    freemarker.template.Configuration cfg = new freemarker.template.Configuration();
+
+    TemplateProcessor(File templateDirectory) {
+        // Specify the data source where the template files come from. Here I set a
+        // plain directory for it, but non-file-system are possible too:
+        cfg.setDirectoryForTemplateLoading(templateDirectory);
+        // Specify how templates will see the data-model. This is an advanced topic...
+        // for now just use this:
+        cfg.setObjectWrapper(new DefaultObjectWrapper());
+        // Set your preferred charset template files are stored in. UTF-8 is
+        // a good choice in most applications:
+        cfg.setDefaultEncoding("UTF-8");
+        // Sets how errors will appear. Here we assume we are developing HTML pages.
+        // For production systems TemplateExceptionHandler.RETHROW_HANDLER is better.
+        cfg.setTemplateExceptionHandler(TemplateExceptionHandler.HTML_DEBUG_HANDLER);
+        // At least in new projects, specify that you want the fixes that aren't
+        // 100% backward compatible too (these are very low-risk changes as far as the
+        // 1st and 2nd version number remains):
+        cfg.setIncompatibleImprovements(new Version(2, 3, 20));  // FreeMarker 2.3.20
+    }
+
+    def processTemplate(String templateName, def dataModel, File output) {
+        File parent = output.getParentFile() //TODO add more checking here
+        parent.mkdirs()
+        Template template = cfg.getTemplate(templateName)
+        OutputStream os = new FileOutputStream(output)
+        Writer writer = new OutputStreamWriter(os)
+        template.process(dataModel, writer)
+        os.close()
+    }
+
+    String processTemplate(String templateName, def dataModel) {
+        Template template = cfg.getTemplate(templateName)
+        StringBuilder sb = new StringBuilder()
+        Writer writer = new OutputStreamWriter(sb)
+        template.process(dataModel, writer)
+        return sb.toString()
+    }
 }
