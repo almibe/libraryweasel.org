@@ -54,7 +54,7 @@ def processTemplates() {
     templateProcessor.processTemplate('index.html', ['blogs':blogs], new File(project.buildDir, 'website/index.html'))
 }
 
-task buildSite(dependsOn:[':copyResources']) {
+task('buildSite', dependsOn:[':copyResources']) << {
     processTemplates();
 }
 
