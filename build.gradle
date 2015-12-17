@@ -2,6 +2,11 @@ import freemarker.template.DefaultObjectWrapper
 import freemarker.template.Template
 import freemarker.template.TemplateExceptionHandler
 import freemarker.template.Version
+import groovy.io.FileType
+import groovy.json.JsonSlurper
+import groovy.transform.Immutable
+import org.pegdown.PegDownProcessor
+import com.google.common.io.Files
 
 apply plugin: 'groovy'
 
@@ -10,6 +15,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
+        classpath localGroovy()
         classpath 'org.freemarker:freemarker:2.3.21'
         classpath 'org.pegdown:pegdown:1.4.2'
         classpath 'com.google.guava:guava:18.0'
@@ -19,8 +25,44 @@ buildscript {
 dependencies {
 }
 
-task buildSite() {
-    println "test"
+task('copyResources', type:Copy) {
+    from("$project.projectDir/src/main/resources/resources")
+    into "$project.buildDir/website"
+}
+
+def processTemplates() {
+    //TODO perform templating tasks and output
+    JsonSlurper jsonSlurper = new JsonSlurper()
+    FileExtensionMapper fileExtensionMapper = new FileExtensionMapper()
+    PegDownProcessor markDownProcessor = new PegDownProcessor()
+    TemplateProcessor templateProcessor = new TemplateProcessor(project.file("src/main/resources/templates"));
+
+    File dir = new File(project.projectDir, "src/main/resources/contents/blog")
+    def blogs = []
+    dir.eachFile(FileType.FILES) { file ->
+        if (Files.getFileExtension(file.getName()) == 'json') {
+            def blogMetadata = jsonSlurper.parse(file)
+            if(fileExtensionMapper.switchFileExtension(file, 'md').isFile()) {
+                blogs << new Blog(blogMetadata.blogTitle, blogMetadata.pubDate, markDownProcessor.markdownToHtml(fileExtensionMapper.switchFileExtension(file, 'md').text))
+            } else if (fileExtensionMapper.switchFileExtension(file, 'html').isFile()) {
+                blogs << new Blog(blogMetadata.blogTitle, blogMetadata.pubDate, fileExtensionMapper.switchFileExtension(file, 'html').text)
+            } else {
+                throw new RuntimeException("$file.path does not have content file.")
+            }
+        }
+    }
+    templateProcessor.processTemplate('index.html', ['blogs':blogs], new File(project.buildDir, 'website/index.html'))
+}
+
+task buildSite(dependsOn:[':copyResources']) {
+    processTemplates();
+}
+
+@Immutable
+class Blog {
+    String title
+    String date
+    String content
 }
 
 class FileExtensionMapper {
