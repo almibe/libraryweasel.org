@@ -1,0 +1,17 @@
+Library Weasel has been written from day one to be helpful to developers (it's almost like a developer wrote it).
+Library Weasel plugins are intended to be developed incrementally in a running instance of Library Weasel.  The way
+that this is handled is by allow plugins to be dynamically loaded by default instead of a requiring workarounds like
+some other software.  In fact the library-weasel-gradle-plugin project contains a task that supports this, the
+`copyPlugin` task.  This task as you may well guess copies a newly built plugin into the plugin directory of an
+instance of Library Weasel.  Because of the flexibility of gradle there are multiple ways to configure what directory
+to copy the plugin into although one is reccomended and another is suggested in certain cases.
+
+The recommended approach is to just globally define the location of the instance of Library Weasel you are working with
+in the file ~/.gradle/gradle.properties like this
+
+`libraryWeaselInstance=/path/to/instance/`
+or
+`libraryWeaselInstance=C:\path\to\instance\`
+
+However if you only need to support copying a plugin to a specific instance that you normally aren't concerned about
+you can place this line in the projects own gradle.properties (you probably won't want to commit that change though).
