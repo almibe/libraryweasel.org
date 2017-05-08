@@ -1,9 +1,0 @@
-/* Library Weasel - A breadboard for open data. */
-/* libraryweasel.org */
-/* humanstxt.org */
-
-/* SITE */
-  Content Author: Alex Berry - alexmiberry@gmail.com
-  Standards: HTML5, CSS3
-  Components: Foundation, featherlight, jQuery
-  Software: naps, Git

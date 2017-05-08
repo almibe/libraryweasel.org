@@ -12,3 +12,7 @@ apply plugin: 'org.almibe.naps'
 
 naps {
 }
+
+task clean() << {
+    project.file('build/').deleteDir()
+}
