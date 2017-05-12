@@ -4,7 +4,7 @@ buildscript {
         mavenLocal()
     }
     dependencies {
-        classpath group: 'org.almibe', name: 'naps', version: '0.2.0'
+        classpath group: 'org.almibe', name: 'naps', version: '0.3.0-SNAPSHOT'
     }
 }
 
@@ -13,6 +13,6 @@ apply plugin: 'org.almibe.naps'
 naps {
 }
 
-task clean() << {
+task clean() doLast {
     project.file('build/').deleteDir()
 }
