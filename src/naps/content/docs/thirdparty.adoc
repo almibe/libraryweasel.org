@@ -1,0 +1,29 @@
+Library Weasel, like much free software, builds on top of already existing tools and libraries.
+This page lists out and describes some of the most important of these projects.  Many other projects
+are used but below are the ones that almost every Library Weasel plugin are likely to use.
+
+Apache Felix/Dependency Manager
+-------------------------------
+Apache Felix is an implementation of the OSGi standard.
+
+Vert.x
+------
+Vert.x is a
+
+OrientDB
+--------
+
+Vue.js
+-------
+
+Bootstrap
+---------
+
+Gradle
+------
+
+Kotlin
+------
+
+JavaFX (Developer Console)
+--------------------------
