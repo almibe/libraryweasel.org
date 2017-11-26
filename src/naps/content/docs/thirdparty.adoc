@@ -10,13 +10,19 @@ Vert.x
 ------
 Vert.x is a
 
-OrientDB
---------
+Xodus
+-----
 
 Vue.js
 -------
 
-Bootstrap
+Kefir.js
+--------
+
+Brunch
+------
+
+Lost Grid
 ---------
 
 Gradle
@@ -25,5 +31,9 @@ Gradle
 Kotlin
 ------
 
-JavaFX (Developer Console)
---------------------------
+Groovy
+------
+
+Spock
+-----
+
