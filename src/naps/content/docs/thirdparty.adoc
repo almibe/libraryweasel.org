@@ -12,7 +12,7 @@ annotations are found in the library-weasel-servo project.
 http://felix.apache.org/
 Vert.x-Web
 ----------
-Vert.x-Web is a project build on Vert.x that is similar to Sinatra, Ratpack, Spark, and other micro web frameworks.
+Vert.x-Web is a project build on Vert.x that is similar to Sinatra, Ratpack, and other micro web frameworks.
 Vert.x-Web was chosen over other similar projects because it runs on the JVM, is easy to embed, plays well with
 OSGi, is well documented, built to be polyglot, and is actively developed.
 http://vertx.io
@@ -24,13 +24,20 @@ It is quick to start up and is easy to embed into an application.
 https://github.com/JetBrains/xodus/wiki/Entity-Stores
 hyperapp
 --------
-
-npm
----
-
-Brunch
+Hyperapp is a small front end javascript library that is fairly quick to learn and follows functional
+principles similar to elm but for javascript.  Note there is nothing about Library Weasel that limits
+you from using any other frontend libraries, I just currently have a preference for Hyperapp.
+https://hyperapp.js.org/
+yarn
+----
+Yarn is an alternative package manager for javascript development that supports things like working
+offline and several other things that npm doesn't do very well out of the box.
+https://yarnpkg.com/
+Parcel
 ------
-
+Parcel is a bundler for front end code that merges and minimizes code during the build with
+minimal configuration.
+https://parceljs.org/
 Bulma
 -----
 Bulma is a CSS framework similar to Bootstrap and Foundation however Bulma separates itself from some
@@ -43,9 +50,17 @@ maven or ant.
 https://gradle.org/
 Kotlin
 ------
-
+Kotlin is an alternative statically typed JVM language that focuses on clean and maintainable code.
+Since it comes from JetBrains it also focuses on being toolable and is well supported by the community
+edition of IntelliJ IDEA.
+https://kotlinlang.org/
 Groovy
 ------
-
-Spock
------
+Groovy is a scripting language for the JVM that is easy to embed into applications.  It is mainly used
+by the library-weasel-developer-script plugin to allow users to run scripts within a Library Weasel
+instance.
+http://groovy-lang.org/
+Spec
+----
+Spec is an executable specification framework that runs on top of JUnit.
+http://spekframework.org/
