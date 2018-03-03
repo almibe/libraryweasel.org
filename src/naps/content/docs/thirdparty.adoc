@@ -25,24 +25,13 @@ links to other entities fitting somewhere between a key value store and a full b
 It is quick to start up and is easy to embed into an application.
 https://github.com/JetBrains/xodus/wiki/Entity-Stores
 
-hyperapp
---------
-Hyperapp is a small front end javascript library that is fairly quick to learn and follows functional
-principles similar to elm but for javascript.  Note there is nothing about Library Weasel that limits
-you from using any other frontend libraries, I just currently have a preference for Hyperapp.
-https://hyperapp.js.org/
-
-yarn
-----
-Yarn is an alternative package manager for javascript development that supports things like working
-offline and several other things that npm doesn't do very well out of the box.
-https://yarnpkg.com/
-
-Parcel
+Vue.js
 ------
-Parcel is a bundler for front end code that merges and minimizes code during the build with
-minimal configuration.
-https://parceljs.org/
+Vue.js is a frontend javascript library that focuses on making it easier to create reactive and maintainable
+UIs.  It also has a large ecosystem of related technologies surrounding it (router, statemanagement,
+testing, building, and deploying) that reduces the need to research and integrate other libraries to do
+common tasks.  Another benefit is it's active community and great documentation.
+https://vuejs.org/
 
 Bulma
 -----
