@@ -28,7 +28,7 @@ https://github.com/JetBrains/xodus/wiki/Entity-Stores
 Vue.js
 ------
 Vue.js is a frontend javascript library that focuses on making it easier to create reactive and maintainable
-UIs.  It also has a large ecosystem of related technologies surrounding it (router, statemanagement,
+UIs.  It also has a large ecosystem of related technologies surrounding it (router, state management,
 testing, building, and deploying) that reduces the need to research and integrate other libraries to do
 common tasks.  Another benefit is it's active community and great documentation.
 https://vuejs.org/
@@ -59,7 +59,7 @@ by the library-weasel-developer-script plugin to allow users to run scripts with
 instance.
 http://groovy-lang.org/
 
-Spec
+Spek
 ----
-Spec is an executable specification framework that runs on top of JUnit.
+Spek is an executable specification framework that runs on top of JUnit.
 http://spekframework.org/
