@@ -1,17 +1,31 @@
-= Setting up a development environment
+= Plugin Development
+
+== Setting up a development environment
 Like all software Library Weasel has a few dependencies that you need to have installed
 on your development machine before you can work with it.
 
-== JDK
+=== JDK
+Currently JDK 8u40+ is required to build and develop plugins for Library Weasel.
+See http://www.oracle.com/technetwork/java/javase/downloads/index.html for links to download
+the latest version of the JDK.
 
-== Intellj Community Edition
+=== IntelliJ Community Edition
+IntelliJ is a popular Java/Kotlin IDE that is free and open source.  It's not required but is
+recommended for use when developing Library Weasel plugins.
+See https://www.jetbrains.com/idea/download/ to download the Community Edition
 
-== Gradle
+=== Gradle
+Gradle is a popular build tool for JVM projects that is used to build Library Weasel projects.
+In fact all plugins are based on a Gradle plugin for building and supplying tasks and dependencies.
+See https://gradle.org/ for download links and instructions on installing Gradle.
 
-== npm
+=== npm
+npm is a package manager/build tool for JavaScript projects that is used to build the front end
+components of Library Weasel plugins.
+See https://www.npmjs.com/ for download links and instructions on installing npm.
 
-== Gradle properties
-To use the `copyPlugin` gradle task Library Weasel expects there to be a gradle
+=== Gradle properties
+To use the `copyPlugin` gradle task Library Weasel expects there to be a Gradle
 property named `libraryWeaselInstance` to be set.
 See https://docs.gradle.org/current/userguide/build_environment.html[docs]
 for details on setting gradle properties in general.  On linux machines the
@@ -20,5 +34,13 @@ that contains a file called `gradle.properties` below is an example of how this
 variable would be set in this file.
 
 ```
-libraryWeaselInstance=/home/alex/IdeaProjects/library-weasel/build/library-weasel
+libraryWeaselInstance=/home/alex/IdeaProjects/library-weasel-developer/build/library-weasel-developer-developer
 ```
+
+== Testing your Environment
+
+TODO add notes on checking out and building the sample plugin project
+
+== Creating your own plugins
+
+TODO
