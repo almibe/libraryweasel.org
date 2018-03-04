@@ -33,12 +33,17 @@ Library Weasel.
 
 == library-weasel-gradle-plugin
 Despite its name library-weasel-gradle-plugin isn't a Library Weasel plugin but instead is a Gradle
-plugin that is be used by Library Weasel plugins.
+plugin that is be used by Library Weasel plugins.  This project contains the `copyPlugin` task as well
+as manages the application of other common gradle plugins and also defines the `coreDeps` and
+`pluginDeps` lists of external dependencies that are used to copy these deps as well as make them
+available as references by other plugins.
 
 == library-weasel-developer-gradle-plugin
-Similar to library-weasel-gradle-plugin this project is used as a Gradle plugin to help with the
+Similar to `library-weasel-gradle-plugin` this project is used as a Gradle plugin to help with the
 development of Library Weasel plugins that add functionality to the desktop JavaFX library-weasel-developer
-application.
+application.  This plugin applies the `library-weasel-gradle-plugin` to all developer plugins and
+adds the `devPluginDeps` list of developer dependencies used when building `library-weasel-developer`
+and for reference when developer other plugins.
 
 == Core Plugins
 
