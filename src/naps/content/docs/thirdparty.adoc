@@ -1,9 +1,10 @@
+= Third Party Dependencies
+
 Library Weasel, like much free software, builds on top of already existing tools and libraries.
 This page lists out and describes some of the most important of these projects.  Many other projects
 are used but below are the ones that almost every Library Weasel plugin are likely to use.
 
-Apache Felix/Dependency Manager
--------------------------------
+== Apache Felix/Dependency Manager
 Apache Felix is an implementation of the OSGi standard.  The core of Library Weasel uses OSGi to load
 and manage all plugins.  Dependency Manager is an Apache Felix subproject that helps developers work
 with dynamic services and their dependencies.  Instead of directly using Dependency Manager which provides
@@ -11,55 +12,47 @@ a Java api to work with Library Weasel uses a set of annotations to mark service
 annotations are found in the library-weasel-servo project.
 http://felix.apache.org/
 
-Vert.x-Web
-----------
+== Vert.x-Web
 Vert.x-Web is a project build on Vert.x that is similar to Sinatra, Ratpack, and other micro web frameworks.
 Vert.x-Web was chosen over other similar projects because it runs on the JVM, is easy to embed, plays well with
 OSGi, is well documented, built to be polyglot, and is actively developed.
 http://vertx.io
 
-Xodus Entity Store
-------------------
+== Xodus Entity Store
 Xodus Entity Store is an embedded database that allows storing schemaless entities with attributes and
 links to other entities fitting somewhere between a key value store and a full blown graph database.
 It is quick to start up and is easy to embed into an application.
 https://github.com/JetBrains/xodus/wiki/Entity-Stores
 
-Vue.js
-------
+== Vue.js
 Vue.js is a frontend javascript library that focuses on making it easier to create reactive and maintainable
 UIs.  It also has a large ecosystem of related technologies surrounding it (router, state management,
 testing, building, and deploying) that reduces the need to research and integrate other libraries to do
 common tasks.  Another benefit is it's active community and great documentation.
 https://vuejs.org/
 
-Bulma
------
+== Bulma
 Bulma is a CSS framework similar to Bootstrap and Foundation however Bulma separates itself from some
 other frameworks by having no javascript dependencies.
 https://bulma.io/
 
-Gradle
-------
+== Gradle
 Gradle is a build tool for the JVM.  I find it easier to work with and extend than other tools such as
 maven or ant.  Several projects related to Library Weasel are simply plugins for Gradle.
 https://gradle.org/
 
-Kotlin
-------
+== Kotlin
 Kotlin is an alternative statically typed JVM language that focuses on clean and maintainable code.
 Since it comes from JetBrains it also focuses on being toolable and is well supported by the community
 edition of IntelliJ IDEA.
 https://kotlinlang.org/
 
-Groovy
-------
+== Groovy
 Groovy is a scripting language for the JVM that is easy to embed into applications.  It is mainly used
 by the library-weasel-developer-script plugin to allow users to run scripts within a Library Weasel
 instance.
 http://groovy-lang.org/
 
-Spek
-----
+== Spek
 Spek is an executable specification framework that runs on top of JUnit.
 http://spekframework.org/
