@@ -22,8 +22,8 @@ that provides additional functionality that can benefit users while they are dev
 local machines.  In fact Library Weasel is designed so that it is likely that some people will only
 use this project since they will always work with Library Weasel on their local machine.  The desktop
 application can also run plugins that are used not just to help with developing server side plugins.
-Library Weasel can be viewed as a little androgynous in this regard since it doesn't make you decide
-between server or desktop if you are working on data sets that benefit from either.
+Library Weasel doesn't make you decide between designing exclusively for either the server or desktop
+if you are working with data sets that benefit from either or both in different ways.
 
 === library-weasel-core
 This project is what both `library-weasel-server` and `library-weasel-developer` use to start the
@@ -31,14 +31,14 @@ actually Vert.x and OSGi instances that Library Weasel is build around.  If you 
 own project similar to the two above this project is what you would use to actually integrate with
 Library Weasel.
 
-== library-weasel-gradle-plugin
+=== library-weasel-gradle-plugin
 Despite its name library-weasel-gradle-plugin isn't a Library Weasel plugin but instead is a Gradle
 plugin that is be used by Library Weasel plugins.  This project contains the `copyPlugin` task as well
 as manages the application of other common gradle plugins and also defines the `coreDeps` and
 `pluginDeps` lists of external dependencies that are used to copy these deps as well as make them
 available as references by other plugins.
 
-== library-weasel-developer-gradle-plugin
+=== library-weasel-developer-gradle-plugin
 Similar to `library-weasel-gradle-plugin` this project is used as a Gradle plugin to help with the
 development of Library Weasel plugins that add functionality to the desktop JavaFX library-weasel-developer
 application.  This plugin applies the `library-weasel-gradle-plugin` to all developer plugins and
@@ -46,7 +46,22 @@ adds the `devPluginDeps` list of developer dependencies used when building `libr
 and for reference when developer other plugins.
 
 == Core Plugins
-
+=== library-weasel-vertx
+=== library-weasel-vertx-api
+=== library-weasel-xodus
+=== library-weasel-auth
+=== library-weasel-servo
+=== library-weasel-instance-files
+=== library-weasel-plugin-autoloader
+=== library-weasel-start-page
 
 == Development Plugins
-
+=== multi-page-display
+=== library-weasel-developer
+=== library-weasel-developer-console
+=== library-weasel-developer-util
+=== library-weasel-developer-api
+=== library-weasel-developer-icons
+=== library-weasel-developer-osgi
+=== library-weasel-developer-script
+=== library-weasel-developer-user
