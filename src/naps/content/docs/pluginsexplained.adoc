@@ -13,11 +13,11 @@ plugins are OSGi bundles and are ran in the context of OSGi these are meant to b
 context.
 
 === library-weasel-server
-This project is used to start up Library Weasel with only its server and web plugins installed.
+Is used to start up Library Weasel with only its server and web plugins installed.
 It can be thought of as the "production" build since it doesn't include any development plugins.
 
 === library-weasel-developer
-This project does all that `library-weasel-server` does but also starts up a JavaFX desktop application
+Does all that `library-weasel-server` does but also starts up a JavaFX desktop application
 that provides additional functionality that can benefit users while they are developing on their
 local machines.  In fact Library Weasel is designed so that it is likely that some people will only
 use this project since they will always work with Library Weasel on their local machine.  The desktop
@@ -46,22 +46,59 @@ adds the `devPluginDeps` list of developer dependencies used when building `libr
 and for reference when developer other plugins.
 
 == Core Plugins
+The following plugins are all OSGi bundles that provide functionality that can be considered core to
+Library Weasel.  Mostly involving OSGi, Vertx, Xodus, authentication, and instance management.
+
 === library-weasel-vertx
+
+
 === library-weasel-vertx-api
+
+
 === library-weasel-xodus
+
+
 === library-weasel-auth
+
+
 === library-weasel-servo
+
+
 === library-weasel-instance-files
+
+
 === library-weasel-plugin-autoloader
+
+
 === library-weasel-start-page
 
+
 == Development Plugins
+The following plugins are all OSGi bundles that provide functionality that is used by default by the
+`library-weasel-developer` project.
+
 === multi-page-display
+Supplies the tab pane that Library Weasel Developer uses.
+
 === library-weasel-developer
+
+
 === library-weasel-developer-console
+
+
 === library-weasel-developer-util
+
+
 === library-weasel-developer-api
+
+
 === library-weasel-developer-icons
+
+
 === library-weasel-developer-osgi
+
+
 === library-weasel-developer-script
+
+
 === library-weasel-developer-user
