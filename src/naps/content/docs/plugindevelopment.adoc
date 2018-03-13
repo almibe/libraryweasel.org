@@ -34,7 +34,7 @@ that contains a file called `gradle.properties` below is an example of how this
 variable would be set in this file.
 
 ```
-libraryWeaselInstance=/home/alex/IdeaProjects/library-weasel-developer/build/library-weasel-developer-developer
+libraryWeaselInstance=/home/alex/IdeaProjects/library-weasel-developer/build/install/library-weasel-developer
 ```
 
 == Testing your Environment

@@ -73,6 +73,9 @@ Library Weasel.  Mostly involving OSGi, Vertx, Xodus, authentication, and instan
 === library-weasel-start-page
 
 
+=== library-weasel-user
+
+
 == Development Plugins
 The following plugins are all OSGi bundles that provide functionality that is used by default by the
 `library-weasel-developer` project.
