@@ -41,24 +41,23 @@ by the library-weasel-developer-script plugin to allow users to run scripts with
 instance.
 http://groovy-lang.org/
 
-== Spek
-Spek is an executable specification framework that runs on top of JUnit.
-http://spekframework.org/
+== KotlinTest/Spock
+KotlinTest and Spock are two specification testing frameworks for the JVM.
+https://github.com/kotlintest/kotlintest
+http://spockframework.org/
 
-== Vue.js
-Vue.js is a frontend javascript library that focuses on making it easier to create reactive and maintainable
-UIs.  It also has a large ecosystem of related technologies surrounding it (router, state management,
-testing, building, and deploying) that reduces the need to research and integrate other libraries to do
-common tasks.  Another benefit is it's active community and great documentation.
-https://vuejs.org/
+== Hyperapp
+Hyperapp is a frontend javascript library that focuses on making it easier to create reactive and
+maintainable UIs.
+https://hyperapp.js.org/
 
 == Bulma
 Bulma is a CSS framework similar to Bootstrap and Foundation however Bulma separates itself from some
 other frameworks by having no javascript dependencies.
 https://bulma.io/
 
-== Brunch
-Brunch is a front end application bundler.  There are many projects that do similar work and all are
-options for using with Library Weasel.  I've choosen Brunch since it requires little configuration,
-supports Vue, and currently builds much faster from within a Gradle build than webpack.
-
+== Parcel
+Parcel is a front end application bundler.  There are many projects that do similar work and all are
+options for using with Library Weasel.  I've choosen Parcel since it requires little configuration
+and currently builds much faster from within a Gradle build than webpack.
+https://parceljs.org/
