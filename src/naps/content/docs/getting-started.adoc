@@ -1,0 +1,24 @@
+= Getting Started With Library Weasel
+
+Library Weasel is a set of applications that are written to run together on a Kubernetes instance.
+This allows Library Weasel to run as happily on your laptop or a single server or a distributed computing environment.
+Currently Library Weasel as a project is new to running on Kubernetes so it is only recomended that applications
+are only ran locally via MiniKube until they reach 1.0 releases.
+That said the first step to using Library Weasel on your local PC is to set up MiniKube.
+
+== Setting Up MiniKube
+
+MiniKube is a distribution of Kubernetes that is intended to be used locally by developers or
+ops to develop or test applications.
+Currently this is the only way that Library Weasel should be ran.
+The Kubernetes website contains a very detailed description of how to install MiniKube
+https://kubernetes.io/docs/tasks/tools/install-minikube/.
+You will also want to install the `kubectl` command.
+See https://kubernetes.io/docs/tasks/tools/install-kubectl/ for instructions on taht.
+That page also explains how to install kubeadm but that isn't needed for Library Weasel.
+Kubeadm is what you would likely use if you were wanting to manage your own Kubernetes instances on a public server.
+
+== Running Library Weasel Applications Via MiniKube + `kubectl`
+
+== Developing A Sample Application
+
