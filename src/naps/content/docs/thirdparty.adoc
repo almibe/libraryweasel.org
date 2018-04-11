@@ -4,25 +4,13 @@ Library Weasel, like much free software, builds on top of already existing tools
 This page lists out and describes some of the most important of these projects.  Many other projects
 are used but below are the ones that almost every Library Weasel plugin are likely to use.
 
-== Apache Felix/Dependency Manager
-Apache Felix is an implementation of the OSGi standard.  The core of Library Weasel uses OSGi to load
-and manage all plugins.  Dependency Manager is an Apache Felix subproject that helps developers work
-with dynamic services and their dependencies.  Instead of directly using Dependency Manager which provides
-a Java api to work with Library Weasel uses a set of annotations to mark services and dependencies.  These
-annotations are found in the library-weasel-servo project.
-http://felix.apache.org/
+== Kubernetes
 
-== Vert.x-Web
-Vert.x-Web is a project build on Vert.x that is similar to Sinatra, Ratpack, and other micro web frameworks.
-Vert.x-Web was chosen over other similar projects because it runs on the JVM, is easy to embed, plays well with
-OSGi, is well documented, built to be polyglot, and is actively developed.
-http://vertx.io
+== Docker
 
-== Xodus Entity Store
-Xodus Entity Store is an embedded database that allows storing schemaless entities with attributes and
-links to other entities fitting somewhere between a key value store and a full blown graph database.
-It is quick to start up and is easy to embed into an application.
-https://github.com/JetBrains/xodus/wiki/Entity-Stores
+== Spark
+Spark is a micro framework for the JVM that works well with running JVM microservices on Kubernetes.
+http://sparkjava.com/
 
 == Gradle
 Gradle is a build tool for the JVM.  I find it easier to work with and extend than other tools such as
