@@ -1,2 +1,7 @@
 == Developing A Sample Application
 
+The following article provides some general guidance on using Java with Kubernetes
+https://www.oreilly.com/ideas/how-to-manage-docker-containers-in-kubernetes-with-java
+
+Below I'll run through how to develop an application that interacts with apis provided
+by Library Weasel.

@@ -1,4 +1,4 @@
-= Plugins Explained
+= Applications Explained
 Library Weasel was designed with a modular plugin system at its core that allows users to create
 extensions on both the server and frontend.  Because of this it can be a little daunting at first
 to manage so many small projects instead of a single monolithic one, but this is what makes it relevant
