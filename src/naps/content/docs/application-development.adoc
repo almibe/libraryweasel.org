@@ -44,3 +44,11 @@ TODO add notes on checking out and building the sample plugin project
 == Creating your own plugins
 
 TODO
+
+== Running a local Docker registry
+
+See the notes in https://docs.docker.com/registry/deploying/.
+Basically you want to set up a local registry for testing during development when you might need to
+reload a container multiple times in a short period of time.
+
+== Developing A Sample Application

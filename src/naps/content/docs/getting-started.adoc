@@ -14,11 +14,15 @@ Currently this is the only way that Library Weasel should be ran.
 The Kubernetes website contains a very detailed description of how to install MiniKube
 https://kubernetes.io/docs/tasks/tools/install-minikube/.
 You will also want to install the `kubectl` command.
-See https://kubernetes.io/docs/tasks/tools/install-kubectl/ for instructions on taht.
+See https://kubernetes.io/docs/tasks/tools/install-kubectl/ for instructions on that.
 That page also explains how to install kubeadm but that isn't needed for Library Weasel.
 Kubeadm is what you would likely use if you were wanting to manage your own Kubernetes instances on a public server.
 
 == Running Library Weasel Applications Via MiniKube + `kubectl`
 
-== Developing A Sample Application
-
+To start MiniKube run `minikube start` and `minikube status` to check it's status.
+To run an application like library-weasel-start-page check out the project and run
+```
+kubectl apply -f start-page-service.yaml
+```
+See the documentation for kubectl and MiniKube for more commands to help manage Kubernetes.
