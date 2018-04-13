@@ -1,6 +1,5 @@
-= Plugin Development
-
 == Setting up a development environment
+
 Like all software Library Weasel has a few dependencies that you need to have installed
 on your development machine before you can work with it.
 
@@ -24,26 +23,9 @@ npm is a package manager/build tool for JavaScript projects that is used to buil
 components of Library Weasel plugins.
 See https://www.npmjs.com/ for download links and instructions on installing npm.
 
-=== Gradle properties
-To use the `copyPlugin` gradle task Library Weasel expects there to be a Gradle
-property named `libraryWeaselInstance` to be set.
-See https://docs.gradle.org/current/userguide/build_environment.html[docs]
-for details on setting gradle properties in general.  On linux machines the
-easiest way to do this is to create a `.gradle` directory in your home directory
-that contains a file called `gradle.properties` below is an example of how this
-variable would be set in this file.
-
-```
-libraryWeaselInstance=/home/alex/IdeaProjects/library-weasel-developer/build/install/library-weasel-developer
-```
-
 == Testing your Environment
 
 TODO add notes on checking out and building the sample plugin project
-
-== Creating your own plugins
-
-TODO
 
 == Running a local Docker registry
 
@@ -144,5 +126,3 @@ spec:
 hostPort: 5000
 ```
 `kubectl apply -f local-registry.yml`
-
-== Developing A Sample Application
