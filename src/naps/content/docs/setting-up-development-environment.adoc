@@ -1,0 +1,128 @@
+== Setting up a development environment
+
+Like all software Library Weasel has a few dependencies that you need to have installed
+on your development machine before you can work with it.
+
+=== JDK
+Currently JDK 8u40+ is required to build and develop plugins for Library Weasel.
+See http://www.oracle.com/technetwork/java/javase/downloads/index.html for links to download
+the latest version of the JDK.
+
+=== IntelliJ Community Edition
+IntelliJ is a popular Java/Kotlin IDE that is free and open source.  It's not required but is
+recommended for use when developing Library Weasel plugins.
+See https://www.jetbrains.com/idea/download/ to download the Community Edition
+
+=== Gradle
+Gradle is a popular build tool for JVM projects that is used to build Library Weasel projects.
+In fact all plugins are based on a Gradle plugin for building and supplying tasks and dependencies.
+See https://gradle.org/ for download links and instructions on installing Gradle.
+
+=== npm
+npm is a package manager/build tool for JavaScript projects that is used to build the front end
+components of Library Weasel plugins.
+See https://www.npmjs.com/ for download links and instructions on installing npm.
+
+== Testing your Environment
+
+TODO add notes on checking out and building the sample plugin project
+
+== Running a local Docker registry
+
+See the notes in https://docs.docker.com/registry/deploying/ for Docker specific details.
+Basically you want to set up a local registry for testing during development when you might need to
+reload a container multiple times in a short period of time.
+The following blog articles explain solutions that are more geared towards MiniKube.
+
+https://mtpereira.com/local-development-k8s.html
+
+https://blog.hasura.io/sharing-a-local-registry-for-minikube-37c7240d0615
+
+Basically what you want to do is the following
+`alias minikube-start='minikube start --vm-driver xhyve --insecure-registry localhost:5000'`
+`eval $(minikube docker-env)`
+```
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: kube-registry-v0
+  namespace: kube-system
+  labels:
+    k8s-app: kube-registry
+    version: v0
+spec:
+  replicas: 1
+  selector:
+    k8s-app: kube-registry
+    version: v0
+  template:
+    metadata:
+      labels:
+        k8s-app: kube-registry
+        version: v0
+    spec:
+      containers:
+      - name: registry
+        image: registry:2
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: REGISTRY_HTTP_ADDR
+          value: :5000
+        - name: REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY
+          value: /var/lib/registry
+        volumeMounts:
+        - name: image-store
+          mountPath: /var/lib/registry
+        ports:
+        - containerPort: 5000
+          name: registry
+          protocol: TCP
+      volumes:
+      - name: image-store
+        emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-registry
+  namespace: kube-system
+  labels:
+    k8s-app: kube-registry
+    kubernetes.io/name: "KubeRegistry"
+spec:
+  selector:
+    k8s-app: kube-registry
+  ports:
+  - name: registry
+    port: 5000
+    protocol: TCP
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kube-registry-proxy
+  namespace: kube-system
+spec:
+  containers:
+  - name: kube-registry-proxy
+    image: gcr.io/google_containers/kube-registry-proxy:0.3
+    resources:
+      limits:
+        cpu: 100m
+        memory: 50Mi
+    env:
+    - name: REGISTRY_HOST
+      value: kube-registry.kube-system.svc.cluster.local
+    - name: REGISTRY_PORT
+      value: "5000"
+    - name: FORWARD_PORT
+      value: "5000"
+    ports:
+    - name: registry
+      containerPort: 5000
+hostPort: 5000
+```
+`kubectl apply -f local-registry.yml`
