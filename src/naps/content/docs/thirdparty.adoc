@@ -8,7 +8,13 @@ are used but below are the ones that almost every Library Weasel plugin are like
 
 == Docker
 
-== Spark
+== Minikube
+
+== Keycloak
+
+== OrientDB
+
+== SparkJava
 Spark is a micro framework for the JVM that works well with running JVM microservices on Kubernetes.
 http://sparkjava.com/
 
