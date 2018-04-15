@@ -1,4 +1,4 @@
-== Setting up a development environment
+== Development Environment Setup
 
 Like all software Library Weasel has a few dependencies that you need to have installed
 on your development machine before you can work with it.

@@ -1,5 +1,8 @@
 == Developing A Sample Application
 
+NOTE: This article assumes you have gone through the `development-environment-setup`
+article.
+
 The following article provides some general guidance on using Java with Kubernetes
 https://www.oreilly.com/ideas/how-to-manage-docker-containers-in-kubernetes-with-java
 
