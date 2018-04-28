@@ -29,54 +29,6 @@ npm is a package manager/build tool for JavaScript projects that is used to buil
 components of Library Weasel plugins.
 See https://www.npmjs.com/ for download links and instructions on installing npm.
 
-== Setting Up MiniKube
-
-MiniKube is a distribution of Kubernetes that is intended to be used locally by developers or
-ops to develop or test applications.
-Currently this is the only way that Library Weasel should be ran.
-The Kubernetes website contains a very detailed description of how to install MiniKube
-https://kubernetes.io/docs/tasks/tools/install-minikube/.
-You will also want to install the `kubectl` command.
-See https://kubernetes.io/docs/tasks/tools/install-kubectl/ for instructions on that.
-That page also explains how to install kubeadm but that isn't needed for Library Weasel.
-Kubeadm is what you would likely use if you were wanting to manage your own Kubernetes instances on a public server.
-
-== Running Library Weasel Applications Via MiniKube + `kubectl`
-
-To start MiniKube run `minikube start` and `minikube status` to check it's status.
-To run an application like library-weasel-start-page check out the project and run
-```
-kubectl apply -f start-page-service.yaml
-```
-See the documentation for kubectl and MiniKube for more commands to help manage Kubernetes.
-
 == Testing your Environment
 
 TODO add notes on checking out and building the sample plugin project
-
-== Running a local Docker registry
-
-See the notes in https://docs.docker.com/registry/deploying/ for Docker specific details.
-Basically you want to set up a local registry for testing during development when you might need to
-reload a container multiple times in a short period of time.
-The following blog articles and discussions
-explain solutions that are more geared towards MiniKube.
-
-* https://github.com/googlefonts/fontbakery-dashboard/issues/3
-* https://mtpereira.com/local-development-k8s.html
-* https://blog.hasura.io/sharing-a-local-registry-for-minikube-37c7240d0615
-
-Basically what you want to do is the following
-`docker run -d -p 5000:5000 --restart=always --name registry -v /data/docker-registry:/var/lib/registry registry:2`
-`minikube start --insecure-registry localhost:5000`
-`eval $(minikube docker-env)`
-
-When developing build your push your docker image to localhost:5000
-
-```
-docker tag NAME localhost:5000/NAME
-docker push localhost:5000/NAME
-```
-
-Now in your Kubernetes files when you are referring to local development versions of your applications
-(not pushed to Docker Store) just make sure to replace `NAME` with `localhost:5000/NAME`.

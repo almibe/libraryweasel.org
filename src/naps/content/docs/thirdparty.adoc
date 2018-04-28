@@ -4,19 +4,8 @@ Library Weasel, like much free software, builds on top of already existing tools
 This page lists out and describes some of the most important of these projects.  Many other projects
 are used but below are the ones that almost every Library Weasel plugin are likely to use.
 
-== Kubernetes
+== Undertow
 
-== Docker
-
-== Minikube
-
-== Keycloak
-
-== OrientDB
-
-== SparkJava
-Spark is a micro framework for the JVM that works well with running JVM microservices on Kubernetes.
-http://sparkjava.com/
 
 == Gradle
 Gradle is a build tool for the JVM.  I find it easier to work with and extend than other tools such as
