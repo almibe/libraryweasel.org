@@ -77,3 +77,33 @@ Library Weasel.  Mostly involving OSGi, Undertow, Xodus, authentication, and ins
 === library-weasel-user
 
 === library-weasel-sample-plugin
+
+== Development Plugins
+The following plugins are all OSGi bundles that provide functionality that is used by default by the
+`library-weasel-developer` project.
+
+=== multi-page-display
+Supplies the tab pane that Library Weasel Developer uses.
+
+=== library-weasel-developer
+
+
+=== library-weasel-developer-console
+
+
+=== library-weasel-developer-util
+
+
+=== library-weasel-developer-api
+
+
+=== library-weasel-developer-icons
+
+
+=== library-weasel-developer-osgi
+
+
+=== library-weasel-developer-script
+
+
+=== library-weasel-developer-user
