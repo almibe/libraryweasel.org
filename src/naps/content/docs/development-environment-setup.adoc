@@ -24,6 +24,19 @@ Gradle is a popular build tool for JVM projects that is used to build Library We
 In fact all plugins are based on a Gradle plugin for building and supplying tasks and dependencies.
 See https://gradle.org/ for download links and instructions on installing Gradle.
 
+=== Gradle properties
+To use the `copyPlugin` gradle task Library Weasel expects there to be a Gradle
+property named `libraryWeaselInstance` to be set.
+See https://docs.gradle.org/current/userguide/build_environment.html[docs]
+for details on setting gradle properties in general.  On linux machines the
+easiest way to do this is to create a `.gradle` directory in your home directory
+that contains a file called `gradle.properties` below is an example of how this
+variable would be set in this file.
+
+```
+libraryWeaselInstance=/home/alex/IdeaProjects/library-weasel-developer/build/install/library-weasel-developer
+```
+
 === npm
 npm is a package manager/build tool for JavaScript projects that is used to build the front end
 components of Library Weasel plugins.
