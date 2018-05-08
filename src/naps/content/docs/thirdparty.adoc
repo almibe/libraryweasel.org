@@ -5,7 +5,15 @@ This page lists out and describes some of the most important of these projects. 
 are used but below are the ones that almost every Library Weasel plugin are likely to use.
 
 == Undertow
+Undertow is a small web server written in Java that can easily be embedded and extended.
+It is used by Library Weasel as it's main web server and you may have noticed the WebPlugin interface
+uses Undertow's Handler interface directly.
+http://undertow.io/
 
+== Project Reactor
+Project Reactor is a reactive programming library for the JVM.
+It is typically used in API to handle blocking calls more explicitly.
+https://projectreactor.io/
 
 == Gradle
 Gradle is a build tool for the JVM.  I find it easier to work with and extend than other tools such as
@@ -24,10 +32,10 @@ by the library-weasel-developer-script plugin to allow users to run scripts with
 instance.
 http://groovy-lang.org/
 
-== KotlinTest/Spock
-KotlinTest and Spock are two specification testing frameworks for the JVM.
-https://github.com/kotlintest/kotlintest
-http://spockframework.org/
+== JUnit 5
+JUnit 5 is the latest version of the very popular JUnit testing framework.
+By default all projects that use the Library Weasel Gradle plugin are automatically set up to use JUnit 5.
+https://junit.org/junit5/
 
 == Hyperapp
 Hyperapp is a frontend javascript library that focuses on making it easier to create reactive and

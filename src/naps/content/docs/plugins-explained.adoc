@@ -1,4 +1,4 @@
-= Applications Explained
+= Plugins Explained
 Library Weasel was designed with a modular plugin system at its core that allows users to create
 extensions on both the server and frontend.  Because of this it can be a little daunting at first
 to manage so many small projects instead of a single monolithic one, but this is what makes it relevant
@@ -47,15 +47,14 @@ and for reference when developer other plugins.
 
 == Core Plugins
 The following plugins are all OSGi bundles that provide functionality that can be considered core to
-Library Weasel.  Mostly involving OSGi, Vertx, Xodus, authentication, and instance management.
+Library Weasel.  Mostly involving OSGi, Undertow, Xodus, authentication, and instance management.
 
-=== library-weasel-vertx
-
-
-=== library-weasel-vertx-api
+=== library-weasel-undertow
 
 
 === library-weasel-xodus
+
+=== library-weasel-web-api
 
 
 === library-weasel-auth
@@ -73,35 +72,8 @@ Library Weasel.  Mostly involving OSGi, Vertx, Xodus, authentication, and instan
 === library-weasel-start-page
 
 
+=== library-weasel-status
+
 === library-weasel-user
 
-
-== Development Plugins
-The following plugins are all OSGi bundles that provide functionality that is used by default by the
-`library-weasel-developer` project.
-
-=== multi-page-display
-Supplies the tab pane that Library Weasel Developer uses.
-
-=== library-weasel-developer
-
-
-=== library-weasel-developer-console
-
-
-=== library-weasel-developer-util
-
-
-=== library-weasel-developer-api
-
-
-=== library-weasel-developer-icons
-
-
-=== library-weasel-developer-osgi
-
-
-=== library-weasel-developer-script
-
-
-=== library-weasel-developer-user
+=== library-weasel-sample-plugin
