@@ -37,6 +37,10 @@ JUnit 5 is the latest version of the very popular JUnit testing framework.
 By default all projects that use the Library Weasel Gradle plugin are automatically set up to use JUnit 5.
 https://junit.org/junit5/
 
+== KotlinTest
+KotlinTest is a testing tool inspired by ScalaTest for the Kotlin programming language.
+https://github.com/kotlintest/kotlintest
+
 == Hyperapp
 Hyperapp is a frontend javascript library that focuses on making it easier to create reactive and
 maintainable UIs.
