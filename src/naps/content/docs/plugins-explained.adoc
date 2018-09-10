@@ -12,24 +12,17 @@ thing to note is that all of the projects under this heading are not OSGi bundle
 plugins are OSGi bundles and are ran in the context of OSGi these are meant to be used outside of this
 context.
 
-=== library-weasel-server
-Is used to start up Library Weasel with only its server and web plugins installed.
-It can be thought of as the "production" build since it doesn't include any development plugins.
+=== library-weasel
 
-=== library-weasel-developer
-Does all that `library-weasel-server` does but also starts up a JavaFX desktop application
-that provides additional functionality that can benefit users while they are developing on their
-local machines.  In fact Library Weasel is designed so that it is likely that some people will only
-use this project since they will always work with Library Weasel on their local machine.  The desktop
-application can also run plugins that are used not just to help with developing server side plugins.
-Library Weasel doesn't make you decide between designing exclusively for either the server or desktop
-if you are working with data sets that benefit from either or both in different ways.
 
 === library-weasel-core
 This project is what both `library-weasel-server` and `library-weasel-developer` use to start the
 actually Vert.x and OSGi instances that Library Weasel is build around.  If you wanted to build your
 own project similar to the two above this project is what you would use to actually integrate with
 Library Weasel.
+
+=== library-weasel-command-mode
+
 
 === library-weasel-gradle-plugin
 Despite its name library-weasel-gradle-plugin isn't a Library Weasel plugin but instead is a Gradle
