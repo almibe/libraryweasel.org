@@ -5,98 +5,14 @@ to manage so many small projects instead of a single monolithic one, but this is
 to compare Library Weasel to a breadboard.  This page exists to explain each of the core application,
 server, and developer plugins and projects.
 
-== Non-Plugins
-Not all projects related to Library Weasel are plugins, below are five projects that either deal with
-the initialization of Library Weasel or aid in the development of Library Weasel plugins.  One important
-thing to note is that all of the projects under this heading are not OSGi bundles while all true
-plugins are OSGi bundles and are ran in the context of OSGi these are meant to be used outside of this
-context.
-
 === library-weasel
-
-
-=== library-weasel-core
-This project is what both `library-weasel-server` and `library-weasel-developer` use to start the
-actually Vert.x and OSGi instances that Library Weasel is build around.  If you wanted to build your
-own project similar to the two above this project is what you would use to actually integrate with
-Library Weasel.
-
-=== library-weasel-command-mode
 
 
 === library-weasel-gradle-plugin
 Despite its name library-weasel-gradle-plugin isn't a Library Weasel plugin but instead is a Gradle
-plugin that is be used by Library Weasel plugins.  This project contains the `copyPlugin` task as well
-as manages the application of other common gradle plugins and also defines the `coreDeps` and
-`pluginDeps` lists of external dependencies that are used to copy these deps as well as make them
-available as references by other plugins.
-
-=== library-weasel-developer-gradle-plugin
-Similar to `library-weasel-gradle-plugin` this project is used as a Gradle plugin to help with the
-development of Library Weasel plugins that add functionality to the desktop JavaFX library-weasel-developer
-application.  This plugin applies the `library-weasel-gradle-plugin` to all developer plugins and
-adds the `devPluginDeps` list of developer dependencies used when building `library-weasel-developer`
-and for reference when developer other plugins.
-
-== Core Plugins
-The following plugins are all OSGi bundles that provide functionality that can be considered core to
-Library Weasel.  Mostly involving OSGi, Undertow, Xodus, authentication, and instance management.
-
-=== library-weasel-undertow
-
-
-=== library-weasel-xodus
+plugin that is be used by Library Weasel plugins.  This project defines the `coreDeps` list of common dependencies.
 
 === library-weasel-web-api
 
-
-=== library-weasel-auth
-
-
-=== library-weasel-servo
-
-
-=== library-weasel-instance-files
-
-
-=== library-weasel-plugin-autoloader
-
-
-=== library-weasel-start-page
-
-
-=== library-weasel-status
-
-=== library-weasel-user
-
 === library-weasel-sample-plugin
 
-== Development Plugins
-The following plugins are all OSGi bundles that provide functionality that is used by default by the
-`library-weasel-developer` project.
-
-=== multi-page-display
-Supplies the tab pane that Library Weasel Developer uses.
-
-=== library-weasel-developer
-
-
-=== library-weasel-developer-console
-
-
-=== library-weasel-developer-util
-
-
-=== library-weasel-developer-api
-
-
-=== library-weasel-developer-icons
-
-
-=== library-weasel-developer-osgi
-
-
-=== library-weasel-developer-script
-
-
-=== library-weasel-developer-user

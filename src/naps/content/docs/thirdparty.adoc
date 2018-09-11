@@ -10,6 +10,12 @@ It is used by Library Weasel as it's main web server and you may have noticed th
 uses Undertow's Handler interface directly.
 http://undertow.io/
 
+== Javalin
+
+== Infinispan
+
+== Xodus
+
 == Project Reactor
 Project Reactor is a reactive programming library for the JVM.
 It is typically used in API to handle blocking calls more explicitly.

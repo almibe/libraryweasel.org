@@ -3,39 +3,23 @@
 Like all software Library Weasel has a few dependencies that you need to have installed
 on your development machine before you can work with it.
 
-Library Weasel is a set of applications that are written to run together on a Kubernetes instance.
+Library Weasel is a set of applications that are written to run together.
 This allows Library Weasel to run as happily on your laptop or a single server or a distributed computing environment.
-Currently Library Weasel as a project is new to running on Kubernetes so it is only recomended that applications
-are only ran locally via MiniKube until they reach 1.0 releases.
-That said the first step to using Library Weasel on your local PC is to set up MiniKube.
 
 === JDK
-Currently JDK 8u40+ is required to build and develop plugins for Library Weasel.
+Currently the latest JDK 10 is required to build and develop plugins for Library Weasel.
 See http://www.oracle.com/technetwork/java/javase/downloads/index.html for links to download
 the latest version of the JDK.
 
 === IntelliJ Community Edition
-IntelliJ is a popular Java/Kotlin IDE that is free and open source.  It's not required but is
-recommended for use when developing Library Weasel plugins.
+IntelliJ is a popular Java/Kotlin IDE that is free and open source.
+It's not required but is recommended for use when developing Library Weasel plugins.
 See https://www.jetbrains.com/idea/download/ to download the Community Edition
 
 === Gradle
 Gradle is a popular build tool for JVM projects that is used to build Library Weasel projects.
 In fact all plugins are based on a Gradle plugin for building and supplying tasks and dependencies.
 See https://gradle.org/ for download links and instructions on installing Gradle.
-
-=== Gradle properties
-To use the `copyPlugin` gradle task Library Weasel expects there to be a Gradle
-property named `libraryWeaselInstance` to be set.
-See https://docs.gradle.org/current/userguide/build_environment.html[docs]
-for details on setting gradle properties in general.  On linux machines the
-easiest way to do this is to create a `.gradle` directory in your home directory
-that contains a file called `gradle.properties` below is an example of how this
-variable would be set in this file.
-
-```
-libraryWeaselInstance=/home/alex/IdeaProjects/library-weasel-developer/build/install/library-weasel-developer
-```
 
 === npm
 npm is a package manager/build tool for JavaScript projects that is used to build the front end
